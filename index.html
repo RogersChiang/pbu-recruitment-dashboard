@@ -136,7 +136,7 @@ pl.forEach(function(e,i){var d=e.data,cv=d.推荐简历数||0,rv=d.简历通过�
 h+='<tr><td style="font-weight:700;text-align:center">'+(i+1)+'</td><td><b>'+e.name+'</b></td><td>'+(d.岗位数||0)+'</td>'+
 '<td style="color:var(--accent)">'+(d.已入职||0)+'</td><td style="color:var(--green)">'+(d.已发offer待入职||0)+'</td><td style="color:var(--amber)">'+(d.招聘中||0)+'</td>'+
 '<td>'+cv+'</td><td>'+rv+'</td><td>'+m1+'</td><td>'+o+'</td>'+
-'<td>'+calcDeptRate(d,"简历通过数","推荐简历数")+'</td><td>'+calcDeptRate(d,"一面通过数","简历通过数")+'</td><td>'+calcDeptRate(d,"二面通过数","简历通过数")+'</td><td>'+calcDeptRate(d,"终面通过数","简历通过数")+'</td><td>'+calcDeptRate(d,"Offer数","终面通过数")+'</td><td>'+calcDeptRate(d,"已入职","Offer数")+'</td></tr>';});
+'<td>'+calcDeptRate(d,"简历通过数","推荐简历数")+'</td><td>'+calcDeptRate(d,"一面通过数","简历通过数")+'</td><td>'+calcDeptRate(d,"二面通过数","简历通过数")+'</td><td>'+calcDeptRate(d,"终面通过数","简历通过数")+'</td><td>'+calcDeptRate(d,"Offer数","终面通过数")+'</td><td>'+(o?Math.min((d.已入职||0)/o,1):'-')*100).toFixed(1)+'%'</td></tr>';});
 h+="</tbody></table>";
 document.getElementById("personTbl").innerHTML=h;
 }
